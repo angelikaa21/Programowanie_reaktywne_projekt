@@ -1,0 +1,43 @@
+.movie-container {
+    position: relative;
+    padding: 5px;
+    margin: 100px;
+    text-align: center;
+
+  }
+  
+  .movie-poster {
+    width: 115px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .movie-title {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #ffffff;
+  }
+  
+  .movie-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .star-icon {
+    color: rgb(179, 160, 55);
+    margin-right: 5px;
+  }
+  
+  .rating-value {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+  
