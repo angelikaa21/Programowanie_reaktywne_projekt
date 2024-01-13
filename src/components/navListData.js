@@ -7,18 +7,12 @@ const navListData = [
     },
     {
         id: 2,
-        link: '/add',
-        name: 'Add movie',
-        active: false,
-    },
-    {
-        id: 3,
         link: '/signup',
         name: 'Signup',
         active: false,
     },
     {
-        id: 4,
+        id: 3,
         link: '/signin',
         name: 'Signin',
         active: false,

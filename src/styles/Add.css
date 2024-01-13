@@ -1,31 +1,98 @@
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #000; 
-    color: #fff;
+.add-movie-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10% auto; 
+  background: linear-gradient(60deg, rgba(94, 93, 93, 0.5) 0%, rgba(25, 25, 26, 0.8) 100%);
+  padding: 2%;
+  border-radius: 10px;
+  height: 70vh;
+  width: 55vh;
+  margin-top: 140px;
 }
 
-h1 {
-    text-align: center;
-    font-size: 46px;
-    margin-top: 150px;
-    margin-bottom: 20px; 
+.add-movie-container {
+  flex: 1;
+  margin-right: 20px;
 }
 
-.add {
-    padding: 20px;
-    min-height: 96vh;
-    box-sizing: border-box;
+.add-movie-container h2 {
+  color: #fff;
+  margin-top: 30px;
+  margin-left: 15px;
+  text-align: center;
 }
 
-.footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #2d2d2d;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    box-sizing: border-box;
+.add-movie-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.add-movie-form h2,
+.add-movie-form p,
+.add-movie-form label {
+  color: #fff;
+  margin-bottom: 10px;
+  
+}
+
+.add-movie-form input,
+.add-movie-form textarea {
+  padding: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  width: 400px;
+}
+
+.add-movie-form button {
+  padding: 10px;
+  background-color: #FF80BC; 
+  color: #fff;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 25px;
+  width: 100%
+}
+
+.add-movie-form button:hover {
+  background-color: #FF6699; 
+}
+
+.modal {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background: #fefefe;
+  padding: 20px;
+  color: #000;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.close {
+  cursor: pointer;
+  font-size: 20px;
+  color: #aaa;
+  float: right;
+}
+
+.close:hover {
+  color: #555;
 }

@@ -1,29 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Container, Row } from 'react-bootstrap';
 import '../App';
 import MovieComponent from '../components/MovieComponent';
+import axios from 'axios';
 
-const exampleMovie = {
-    title: 'Film',
-    poster: 'obrazek.png',
-    rating: 10,
-  };
-  
-  const numberOfCopies =10;
-  
-  const movies = Array(numberOfCopies).fill(exampleMovie);
+const Home = () => {
+  const [movies, setMovies] = useState([]);
 
-function Home() {
-    return (
-      <div className='home'>
-        <div className='movie-list'>
-          {movies.map((movie, index) => (
-            <MovieComponent key={index} {...movie} />
+  useEffect(() => {
+    axios.get('https://at.usermd.net/api/movies')
+      .then(response => {
+        setMovies(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching movies:', error);
+      });
+  }, []);
+
+  return (
+    <div>
+      <Container>
+        <Row className="movie-list">
+          {movies.map((movie) => (
+            <MovieComponent key={movie.id} {...movie} />
           ))}
-        </div>
-      </div>
-    );
-  }
+        </Row>
+      </Container>
+    </div>
+  );
+};
 
-
-  
 export default Home;

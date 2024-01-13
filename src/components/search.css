@@ -10,9 +10,9 @@
     top: 0;
     width: 100%;
     height: 100%;
-    color: #ffffff;
+    color: #FF80BC;
     background: transparent;
-    border: 1px solid rgba(255,255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     outline: none;
     border-radius: 4px;
     padding: 0 10px 0 45px !important;
@@ -30,5 +30,5 @@
     left: 10px;
     padding-right: 10px;
     color: #ffffff;
-    border-right: 1px solid #ffffff;
+    border-right: 1px solid #FF80BC;
 }

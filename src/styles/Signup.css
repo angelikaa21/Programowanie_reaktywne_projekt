@@ -12,20 +12,23 @@ body {
     min-height: 96vh;
     padding: 20px;
     box-sizing: border-box;
+    margin-top: 40px;
 }
 
 .registration-box {
     margin-top: 100px;
-    background-color: #19191a;
+    background: linear-gradient(60deg, rgba(94, 93, 93, 0.5) 0%, rgba(25, 25, 26, 0.8) 100%);
     color: #ffffff;
-    border-radius: 8px;
+    border-radius: 10px;
     padding: 20px;
     width: 300px;
     box-sizing: border-box;
+    width: 20%; 
 }
 
 .registration-container h2 {
     font-size: 24px;
+    text-align: center;
 }
 
 .registration-container form {
@@ -52,13 +55,18 @@ body {
 
 .registration-container button {
     padding: 6px 12px;
-    border-radius: 8px;
-    border-color: #000000;
-    background-color: darkgray;
-    color: #333333;
+    border-radius: 5px;
+    border: none;
+    background-color: #FF80BC;
+    color: #ffffff;
     cursor: pointer;
     font-size: 18px;
     margin-top: 10px;
+    width: 100%
+    
+}
+.registration-container button:hover{
+    background-color: #FF6699; 
 }
 
 .have-account-text {
@@ -66,7 +74,7 @@ body {
 }
 
 .have-account-text a {
-    color: #ffffff;
+    color: #FF80BC;
 }
 
 
@@ -75,7 +83,7 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #19191a;
+    background-color: #FF80BC;
     color: #fff;
     text-align: center;
     padding: 10px;

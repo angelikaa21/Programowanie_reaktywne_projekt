@@ -1,15 +1,16 @@
 .movie-container {
     position: relative;
     padding: 5px;
-    margin: 100px;
+    margin: 50px;
     text-align: center;
-
+    margin-top: 120px;
   }
   
   .movie-poster {
-    width: 115px;
-    height: auto;
+    width: 250px;
+    height: 360px;
     margin-bottom: 10px;
+    border-radius: 10px;
   }
   
   .movie-title {
@@ -25,7 +26,7 @@
   }
   
   .star-icon {
-    color: rgb(179, 160, 55);
+    color: #FF80BC;
     margin-right: 5px;
   }
   
