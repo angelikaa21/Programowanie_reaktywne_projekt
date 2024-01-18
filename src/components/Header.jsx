@@ -4,10 +4,12 @@ import NavListItem from "./NavListItem";
 import navListData from "./navListData";
 import './header.css';
 import Search from "./Search";
+import SearchResults from "./SearchResults";
 
 function Header() {
     const navigate = useNavigate();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [filteredMovies, setFilteredMovies] = useState([]);
 
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -22,6 +24,10 @@ function Header() {
         navigate('/');
     };
 
+    const handleSearch = (results) => {
+        setFilteredMovies(results);
+    };
+
     return (
         <header>
             <Link to="/" className="logo">
@@ -32,10 +38,14 @@ function Header() {
                     <NavListItem key={nav.id} nav={nav} isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
                 ))}
             </ul>
-            <Search />
+            <Search onSearch={handleSearch} />
+            {filteredMovies.length > 0 && (
+                <SearchResults
+                    filteredMovies={filteredMovies}
+                />
+            )}
         </header>
     );
 }
 
 export default Header;
-

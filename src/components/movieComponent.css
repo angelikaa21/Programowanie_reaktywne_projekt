@@ -1,16 +1,27 @@
 .movie-container {
     position: relative;
-    padding: 5px;
-    margin: 50px;
+    padding: 2px;
     text-align: center;
-    margin-top: 120px;
+    margin-top: 130px;
+    transition: transform 0.4s;
+    box-sizing: border-box;
+    
+  }
+
+  .movie-container:hover {
+    transform: scale(1);
   }
   
   .movie-poster {
     width: 250px;
     height: 360px;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
     border-radius: 10px;
+    transition: transform 0.4s; 
+  }
+
+  .movie-container:hover .movie-poster {
+    transform: scale(1.12);
   }
   
   .movie-title {
@@ -37,8 +48,7 @@
   }
   
   .movie-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+  }
   

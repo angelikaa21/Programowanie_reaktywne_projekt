@@ -7,6 +7,7 @@ import '../styles/Details.css';
 const Details = () => {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
@@ -24,7 +25,26 @@ const Details = () => {
     };
 
     fetchMovieDetails();
+    const token = localStorage.getItem('token');
+    setIsLoggedIn(!!token);
   }, [id]);
+
+  const handleDelete = () => {
+    const token = localStorage.getItem('token');
+
+    axios.delete(`https://at.usermd.net/api/movie/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+    .then(response => {
+      console.log('Movie deleted successfully:', response);
+      window.location.href = '/';
+    })
+    .catch(error => {
+      console.error('Error deleting movie:', error);
+    });
+  };
 
   if (!movieDetails) {
     return <p>Loading...</p>;
@@ -41,6 +61,11 @@ const Details = () => {
         <p>Gatunek: {movieDetails.genre}</p>
         <p>Rok wydania: {movieDetails.publicationYear}</p><br/><br/>
         <p>{movieDetails.content}</p>
+        {isLoggedIn && (
+          <button className='delete-button' onClick={handleDelete}>
+            Delete
+          </button>
+        )}
       </div>
     </div>
   );
